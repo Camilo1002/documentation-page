@@ -1,0 +1,70 @@
+$font-size: 20px;
+$font-color: red;
+
+body {
+  font-size: $font-size;
+}
+
+#parrafo_verde {
+  color: green;
+  font-weight: bold;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "navbar main-doc";
+  width: 100%;
+}
+
+#navbar {
+  grid-area: navbar;
+  width: auto;
+  font-family: "Roboto Condensed", sans-serif;
+
+  border-right: 4px solid paleturquoise;
+
+  #sticky {
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
+  h1 {
+    padding-left: 10%;
+  }
+  a:hover {
+    background-color: paleturquoise;
+  }
+}
+
+#main-doc {
+  grid-area: main-doc;
+  padding-left: 5%;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    display: block;
+    flex-direction: row;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  #navbar {
+    font-size: 10px;
+    width: 90%;
+    border: none;
+  }
+
+  #main-doc {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+}

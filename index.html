@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="scss/main.css">
+    
+    <title>CSS</title>
+</head>
+
+<body>
+    
+        <nav id="navbar" class=""> 
+            <div id="sticky">
+            <header ><h1>CSS</h1></header>
+            <a class="nav-link" href="#que_es_css">¿Que es CSS?</a>
+            <a class="nav-link" href="#para_empezar">Para empezar</a>
+            <a class="nav-link" href="#style">Style</a>
+            <a class="nav-link" href="#color_en_los_enlaces">Color en los enlaces</a>
+            <a class="nav-link" href="#incluir_estilos">Incluir estilos para todo un sitio web</a>
+            <a class="nav-link" href="#selectores_de_id">Selectores de ID</a>
+            <a class="nav-link" href="#selectores_de_clase">Selectores de clase</a>
+            <a class="nav-link" href="#combinacion_de_selectores">Combinacion de selectores</a>
+        </div>
+        </nav>
+        <main id="main-doc">
+        <section class="main-section" id="que_es_css">
+            <header>
+                <h1>¿Que es CSS?</h1>
+            </header>
+            <p>CSS (en inglés Cascading Style Sheets) es lo que se denomina lenguaje de hojas de estilo en cascada y se
+                usa para estilizar elementos escritos en un lenguaje de marcado como HTML.</p>
+
+            <p>Gracias a las CSS somos mucho más dueños de los resultados finales de la página, pudiendo hacer muchas
+                cosas que no se podía hacer utilizando solamente HTML, como incluir márgenes, tipos de letra, fondos,
+                colores...</p>
+        </section>
+        <section class="main-section" id="para_empezar">
+            <header>
+                <h1>Para empezar</h1>
+            </header>
+            <p>Las Hojas de Estilo en Cascada se escriben dentro del código HTML de la página web, solo en casos
+                avanzados se pueden escribir en un archivo a parte y enlazar la página con ese archivo. En un principio
+                vamos a utilizar la manera más directa de aplicar estilos a los elementos de la página, mas adelante
+                veremos la declaración en archivos externos. Para ello, y esto es la primera lección de este artículo,
+                vamos a conocer un nuevo atributo que se puede utilizar en casi todas las etiquetas HTML:
+                <strong>style.</strong></p>
+        </section>
+        <section class="main-section" id="style">
+            <header>
+                <h1>Style</h1>
+            </header>
+            <p>Dentro del atributo style se deben indicar los atributos de estilos CSS separados por punto y coma (;).
+                Durante este artículo vamos a conocer muchos atributos de CSS,</p>
+            <h3>Ejemplo:</h3>
+
+            <code>
+                   <pre>
+                   &lt;p style="color: green; font-weight: bold;"&gt;
+                    </pre>
+               </code>
+            <p id="parrafo_verde">El parrafo saldra en color verde y negrita</p>
+
+            <p>Los dos primeros atributos de xss que hemos visto son:</p>
+            <ul>
+                <li>color: indica el color del contenido la etiqueta donde estemos utilizándolo, generalmente indica el
+                    color del texto.</li>
+                <li>font-weight: indica el grosor del texto. Bold sirve para poner en negrita.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="color_en_los_enlaces">
+            <header>
+                <h1>Color en los enlaces</h1>
+            </header>
+            <p>Con HTML definimos el color de los enlaces en la etiqueta < body>, con lo atributos link, vlink y alink.
+                    Esto nos permite cambiar el color de los enlaces para todo el documento, pero ¿Y si queremos cambiar
+                    el color de un enlace en concreto, para que tenga otro color que el definido en la etiqueta "< body>
+                        "?</p>
+            <p>Para hacer esto utilizaremos el atributo style dentro del enlace:</p>
+            <code>
+                <pre>
+                    &lt;a href="mienlace.html" style="color:red"&gt; 
+                </pre>
+            </code>
+            <p>Así saldrá el enlace en color rojo, independientemente de lo definido para todo el documento.</p>
+        </section>
+        <section class="main-section" id="incluir_estilos">
+            <header>
+                <h1>Incluir estilos para todo un sitio web</h1>
+            </header>
+            <p>Una de las características más potentes de la programación con hojas de estilo consiste en definir los
+                estilos de todo un sitio web. Esto se consigue creando un archivo donde tan sólo colocamos las
+                declaraciones de estilos de la página y enlazando todas las páginas del sitio con ese archivo. De este
+                modo, todas las páginas comparten una misma declaración de estilos y, por tanto, si la cambiamos,
+                cambiarán todas las páginas.</p>
+            <p>Veamos ahora todo el proceso para incluir estilos con un fichero externo.</p>
+            <ul>
+                <li>Creamos el fichero con la declaración de estilos</li>
+            </ul>
+            <p>Es un fichero de texto normal, que puede tener cualquier extensión, aunque le podemos asignar la
+                extensión .css para aclararnos qué tipo de archivo es. El texto que debemos incluir debe ser escrito
+                exclusivamente en sintaxis CSS, es un poco distinta que la sintaxis que utilizamos dentro del atributo
+                style. Sería erróneo incluir código HTML en este archivo: etiquetas y demás. Podemos ver un ejemplo a
+                continuación.</p>
+
+            <code>
+    <pre>
+        P{ 
+            font-size : 12pt; 
+            font-family : arial,helvetica; 
+            font-weight : normal; 
+            } 
+            H1 { 
+            font-size : 36pt; 
+            font-family : verdana,arial; 
+            text-decoration : underline; 
+            text-align : center; 
+            background-color : Teal; 
+            } 
+            BODY { 
+            background-color : #006600; 
+            font-family : arial; 
+            color : White; 
+            }
+    </pre>
+                </code>
+            <ul>
+
+                <li>Enlazamos la página web con la hoja de estilos</li>
+            </ul>
+            <p>Para ello vamos a colocar la etiqueta < LINK> con los atributos:</p>
+            <ul>
+                <li>rel="STYLESHEET" indicando que el enlace es con una hoja de estilo.</li>
+                <li>type="text/css" porque el archivo es de texto, en sintaxis CSS.</li>
+                <li>href="estilos.css" indica el nombre del fichero fuente de los estilos.</li>
+            </ul>
+            <p>Veamos una página web entera que enlaza con la declaración de estilos anterior:</p>
+            <code>
+<pre>
+&lt;html&gt;   
+&lt;head&gt; 
+<strong>&lt;link rel="STYLESHEET" type="text/css" href="estilos.css"&gt; </strong>
+&lt;title >Página que lee estilos&gt;/title&gt; 
+&lt;/head&gt;   
+&lt;body&gt;  
+&lt;h1 >Página que lee estilos&gt;/h1&gt; 
+&lt;p&gt;
+Esta página tiene en la cabecera la etiqueta necesaria 
+para enlazar con la hoja de estilos. Es muy fácil. 
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                </code>
+        </section>
+        <section class="main-section" id="selectores_de_id">
+            <header>
+                <h1>Selectores de ID</h1>
+            </header>
+            <p>Acabamos de ver como llamamos una etiqueta directamente desde nuestro archivo css, lo cual nos generaliza
+                los estilos para todas las etiquetas iguales que esten definidas dentro de nuestro documento HTML, para
+                solucionar esto existen los seletores de ID</p>
+
+            <p>los <strong>selectores de ID</strong> de CSS buscan un elemento basado en el contenido del atributo id.
+                El atributo ID del elemento seleccionado debe coincidir exactamente con el valor dado en el selector.
+            </p>
+
+            <h4>Ejemplo:</h4>
+            <h3>CSS</h3>
+            <code>
+<pre>
+    #identified {
+        background-color: skyblue;
+        }
+</pre>
+            </code>
+            <h3>HTML</h3>
+            <code>
+    <pre>
+        &lt;div&gt;id="identified">¡Este div tiene un ID especial!&lt;/div&gt;
+        &lt;div&gt;Este solo es un div regular.&lt;div/&gt;
+    </pre>
+            </code>
+            <p>(Los id son unicos y se le declaran a un solo elemento, por lo cual si le pones el mismo id a otro
+                elemento los enlaces solamente irán al primero de los elementos que tengan el mismo identificador. Por
+                primero me refiero, claro, al primero que encontremos en el árbol del DOM.)</p>
+        </section>
+        <section class="main-section" id="selectores_de_clase"> 
+            <header>
+                <h1>Selectores de clase</h1>
+            </header>
+            <p>Una de las soluciones más sencillas para aplicar estilos a un solo elemento de la página consiste en
+                utilizar el atributo class de HTML sobre ese elemento para indicar directamente la regla CSS que se le
+                debe aplicar, aca no utilizamos el (#) como con los ID, aca lo reemplazamos por un punto (.).</p>
+            <h4>Ejemplo:</h4>
+            <h3>CSS</h3>
+            <code>
+    <pre>
+        .destacado { color: red; } 
+    </pre>
+            </code>
+            <h3>HTML</h3>
+            <code>
+    <pre>
+        &lt;body&gt;
+            &lt;p class="destacado"&lt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+            &lt;p&gt;Nunc sed lacus et est adipiscing accumsan...&lt;/p&gt;
+            &lt;p&gt;Class aptent taciti sociosqu ad litora...&lt;/p&gt;
+            &lt;/body&gt;
+    </pre>
+            </code>
+            <p>A diferencia de los ID, las clases si se le pueden definir a varios elementos sin ningun problema, y asi
+                con un solo selector darle estilo a varios elementos dentro de nuestro documento.</p>
+        </section>
+        <section class="main-section" id="combinacion_de_selectores">
+            <header>
+                <h1>Combinación de selectores básicos</h1>
+            </header>
+            <p>CSS permite la combinación de uno o más tipos de selectores para restringir el alcance de las reglas CSS.
+                A continuación se muestran algunos ejemplos habituales de combinación de selectores.</p>
+            <h4>Ejemplo:</h4>
+            <code>
+    <pre>
+        .aviso .especial { ... }
+    </pre>
+            </code>
+            <p>El anterior selector solamente selecciona aquellos elementos con un class="especial" que se encuentren
+                dentro de cualquier elemento con un class="aviso".</p>
+        </section>
+        <section class="main-section">
+
+            <p>Estos son algunos principios basicos de CSS para personalizar nuestro sitio web. CSS ofrece un sin fin de estilos como; animaciones, transiciones, entre otros. Animate aprender CSS y a descubrir este grandioso mundo del desarrollo web.</p>
+        </section>
+        
+    </main>
+    <hr>
+    <footer>Fuente:<a href="https://developer.mozilla.org/es/">https://developer.mozilla.org/es/</a><br>
+        <p>&copy;JUAN CAMILO DIEZ M.</p>
+    </footer>
+</body>
+
+</html>
